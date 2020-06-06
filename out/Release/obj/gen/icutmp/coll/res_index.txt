@@ -1,0 +1,11 @@
+﻿// -*- Coding: utf-8; -*-
+//
+// NOTE: This file was generated during the build process.
+// Generator: tools/icu/iculslocs.cc
+// Input package-tree/item: icudt64l-coll/res_index.res
+res_index:table(nofallback) {
+    // First, everything besides InstalledLocales:
+    InstalledLocales:table { // 1 locales in input res_index.res
+        en {""}
+    } // 1/1 valid
+}

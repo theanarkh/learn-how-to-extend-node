@@ -1,0 +1,1 @@
+cmd_/home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/icu/libicustubdata.a := rm -f /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/icu/libicustubdata.a && ar crsT /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/icu/libicustubdata.a /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/icustubdata/deps/icu-small/source/stubdata/stubdata.o

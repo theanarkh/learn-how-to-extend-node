@@ -1,0 +1,1 @@
+cmd_/home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/v8_gypfiles/libv8_init.a := rm -f /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/v8_gypfiles/libv8_init.a && ar crsT /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/tools/v8_gypfiles/libv8_init.a /home/cyb/nodejs/node-v12.14.0/out/Release/obj.target/v8_init/deps/v8/src/init/setup-isolate-full.o
