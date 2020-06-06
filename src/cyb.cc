@@ -23,8 +23,6 @@
 #include "env-inl.h"
 #include "util-inl.h"
 #include "node_internals.h"
-#include "tcp_wrap.h"
-
 
 namespace node {
 
