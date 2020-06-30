@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/v8_shared_internal_headers.stamp := touch /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/v8_shared_internal_headers.stamp

@@ -57,7 +57,7 @@ static int uv__tcp_nodelay(uv_tcp_t* handle, SOCKET socket, int enable) {
 }
 
 
-static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsigned int delay) {
+static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsigned int delay, unsigned int interval, unsigned int count) {
   if (setsockopt(socket,
                  SOL_SOCKET,
                  SO_KEEPALIVE,
@@ -68,7 +68,8 @@ static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsign
 
   if (enable && setsockopt(socket,
                            IPPROTO_TCP,
-                           TCP_KEEPALIVE,
+                          	TCP_KEEPIDLE,
+			   // TCP_KEEPALIVE,
                            (const char*)&delay,
                            sizeof delay) == -1) {
     return WSAGetLastError();
@@ -76,7 +77,9 @@ static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsign
 
   return 0;
 }
-
+int uv_tcp_timeout(uv_tcp_t* handle, unsigned int timeout) {
+	return 0;
+}
 
 static int uv_tcp_set_socket(uv_loop_t* loop,
                              uv_tcp_t* handle,
@@ -134,7 +137,7 @@ static int uv_tcp_set_socket(uv_loop_t* loop,
 
   /* TODO: Use stored delay. */
   if (handle->flags & UV_HANDLE_TCP_KEEPALIVE) {
-    err = uv__tcp_keepalive(handle, socket, 1, 60);
+    err = uv__tcp_keepalive(handle, socket, 1, 60, 0, 0);
     if (err)
       return err;
   }
@@ -1280,11 +1283,11 @@ int uv_tcp_nodelay(uv_tcp_t* handle, int enable) {
 }
 
 
-int uv_tcp_keepalive(uv_tcp_t* handle, int enable, unsigned int delay) {
+int uv_tcp_keepalive(uv_tcp_t* handle, int enable, unsigned int delay, unsigned int interval, unsigned int count) {
   int err;
 
   if (handle->socket != INVALID_SOCKET) {
-    err = uv__tcp_keepalive(handle, handle->socket, enable, delay);
+    err = uv__tcp_keepalive(handle, handle->socket, enable, delay, interval, count);
     if (err)
       return err;
   }

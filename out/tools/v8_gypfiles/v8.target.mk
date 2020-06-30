@@ -3,25 +3,25 @@
 TOOLSET := target
 TARGET := v8
 ### Rules for action "v8_dump_build_config":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config = ACTION _home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config $@
-cmd__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/v8_gypfiles; mkdir -p $(builddir); python ../../deps/v8/tools/testrunner/utils/dump_build_config_gyp.py "$(builddir)/v8_build_config.json" "dcheck_always_on=0" "is_android=0" "is_asan=0" "is_cfi=0" "is_clang=0" "is_component_build=static_library" "is_debug=$(BUILDTYPE)" "is_gcov_coverage=0" "is_msan=0" "is_tsan=0" "is_ubsan_vptr=0" "target_cpu=x64" "v8_enable_i18n_support=1" "v8_enable_verify_predictable=0" "v8_target_cpu=x64" "v8_use_snapshot=1" "v8_use_siphash=1" "v8_enable_embedded_builtins=1" "v8_enable_verify_csa=0" "v8_enable_lite_mode=0" "v8_enable_pointer_compression=0"
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config = ACTION _home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config $@
+cmd__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/v8_gypfiles; mkdir -p $(builddir); python ../../deps/v8/tools/testrunner/utils/dump_build_config_gyp.py "$(builddir)/v8_build_config.json" "dcheck_always_on=0" "is_android=0" "is_asan=0" "is_cfi=0" "is_clang=0" "is_component_build=static_library" "is_debug=$(BUILDTYPE)" "is_gcov_coverage=0" "is_msan=0" "is_tsan=0" "is_ubsan_vptr=0" "target_cpu=x64" "v8_enable_i18n_support=1" "v8_enable_verify_predictable=0" "v8_target_cpu=x64" "v8_use_snapshot=1" "v8_use_siphash=1" "v8_enable_embedded_builtins=1" "v8_enable_verify_csa=0" "v8_enable_lite_mode=0" "v8_enable_pointer_compression=0"
 
 $(builddir)/v8_build_config.json: obj := $(abs_obj)
 $(builddir)/v8_build_config.json: builddir := $(abs_builddir)
 $(builddir)/v8_build_config.json: TOOLSET := $(TOOLSET)
 $(builddir)/v8_build_config.json: $(srcdir)/deps/v8/tools/testrunner/utils/dump_build_config_gyp.py FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config)
 
 all_deps += $(builddir)/v8_build_config.json
-action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs := $(builddir)/v8_build_config.json
+action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs := $(builddir)/v8_build_config.json
 
 
 ### Rules for final target.
 # Build our special outputs first.
-$(obj).target/tools/v8_gypfiles/libv8.a: | $(action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs)
+$(obj).target/tools/v8_gypfiles/libv8.a: | $(action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs)
 
 # Preserve order dependency of special output on deps.
-$(action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs): | $(obj).target/tools/v8_gypfiles/v8_maybe_snapshot.stamp
+$(action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_target_v8_dump_build_config_outputs): | $(obj).target/tools/v8_gypfiles/v8_maybe_snapshot.stamp
 
 LDFLAGS_Debug := \
 	-pthread \

@@ -3,43 +3,43 @@
 TOOLSET := target
 TARGET := icudata
 ### Rules for action "icutrim":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim = ACTION _home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim $@
-cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen/icutmp; python icutrim.py -P "$(builddir)" -D ../../deps/icu-small/source/data/in/icudt64l.dat --delete-tmp -T "$(obj)/gen/icutmp" -F icu_small.json -O icudt64l.dat -v -L en,root
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim = ACTION _home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim $@
+cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen/icutmp; python icutrim.py -P "$(builddir)" -D ../../deps/icu-small/source/data/in/icudt64l.dat --delete-tmp -T "$(obj)/gen/icutmp" -F icu_small.json -O icudt64l.dat -v -L en,root
 
 $(obj)/gen/icutmp/icudt64l.dat: obj := $(abs_obj)
 $(obj)/gen/icutmp/icudt64l.dat: builddir := $(abs_builddir)
 $(obj)/gen/icutmp/icudt64l.dat: TOOLSET := $(TOOLSET)
 $(obj)/gen/icutmp/icudt64l.dat: $(srcdir)/deps/icu-small/source/data/in/icudt64l.dat $(srcdir)/tools/icu/icu_small.json FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim)
 
 all_deps += $(obj)/gen/icutmp/icudt64l.dat
-action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs := $(obj)/gen/icutmp/icudt64l.dat
+action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs := $(obj)/gen/icutmp/icudt64l.dat
 
 ### Rules for action "rename":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename = ACTION _home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename $@
-cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen/icutmp; cp "$(obj)/gen/icutmp/icudt64l.dat" "$(obj)/gen/icutmp/icusmdt64.dat"
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename = ACTION _home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename $@
+cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen/icutmp; cp "$(obj)/gen/icutmp/icudt64l.dat" "$(obj)/gen/icutmp/icusmdt64.dat"
 
 $(obj)/gen/icutmp/icusmdt64.dat: obj := $(abs_obj)
 $(obj)/gen/icutmp/icusmdt64.dat: builddir := $(abs_builddir)
 $(obj)/gen/icutmp/icusmdt64.dat: TOOLSET := $(TOOLSET)
 $(obj)/gen/icutmp/icusmdt64.dat: $(obj)/gen/icutmp/icudt64l.dat FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename)
 
 all_deps += $(obj)/gen/icutmp/icusmdt64.dat
-action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename_outputs := $(obj)/gen/icutmp/icusmdt64.dat
+action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename_outputs := $(obj)/gen/icutmp/icusmdt64.dat
 
 ### Rules for action "genccode":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode = ACTION _home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode $@
-cmd__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen; "$(builddir)/genccode" -d "$(obj)/gen" "$(obj)/gen/icutmp/icusmdt64.dat"
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode = ACTION _home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode $@
+cmd__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/icu; mkdir -p $(obj)/gen; "$(builddir)/genccode" -d "$(obj)/gen" "$(obj)/gen/icutmp/icusmdt64.dat"
 
 $(obj)/gen/icusmdt64_dat.c: obj := $(abs_obj)
 $(obj)/gen/icusmdt64_dat.c: builddir := $(abs_builddir)
 $(obj)/gen/icusmdt64_dat.c: TOOLSET := $(TOOLSET)
 $(obj)/gen/icusmdt64_dat.c: $(obj)/gen/icutmp/icusmdt64.dat FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode)
 
 all_deps += $(obj)/gen/icusmdt64_dat.c
-action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs := $(obj)/gen/icusmdt64_dat.c
+action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs := $(obj)/gen/icusmdt64_dat.c
 
 
 DEFS_Debug := \
@@ -129,7 +129,7 @@ all_deps += $(OBJS)
 $(OBJS): | $(builddir)/genccode $(builddir)/icupkg $(builddir)/genrb $(builddir)/iculslocs $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp
 
 # Make sure our actions/rules run before any of us.
-$(OBJS): | $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs)
+$(OBJS): | $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs)
 
 # CFLAGS et al overrides must be target-local.
 # See "Target-specific Variable Values" in the GNU Make manual.
@@ -153,10 +153,10 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.c FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 # Build our special outputs first.
-$(obj).target/tools/icu/libicudata.a: | $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs)
+$(obj).target/tools/icu/libicudata.a: | $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs)
 
 # Preserve order dependency of special output on deps.
-$(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_cyb_nodejs_node_v12_14_0_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs): | $(builddir)/genccode $(builddir)/icupkg $(builddir)/genrb $(builddir)/iculslocs $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp
+$(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_icutrim_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_rename_outputs) $(action__home_ubuntu_learn_how_to_extend_node_tools_icu_icu_generic_gyp_icudata_target_genccode_outputs): | $(builddir)/genccode $(builddir)/icupkg $(builddir)/genrb $(builddir)/iculslocs $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp
 
 LDFLAGS_Debug := \
 	-pthread \
