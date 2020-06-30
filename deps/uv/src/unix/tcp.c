@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include <assert.h>
 #include <errno.h>
-
+#include <stdio.h>
 
 static int new_socket(uv_tcp_t* handle, int domain, unsigned long flags) {
   struct sockaddr_storage saddr;
@@ -384,11 +384,17 @@ int uv__tcp_keepalive(int fd, int on, unsigned int delay, unsigned int interval,
 #endif
 #ifdef TCP_KEEPINTVL
   if (on && interval && setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &interval, sizeof(interval)))
+  {
+    printf("%d", interval);
     return UV__ERR(errno);
+  }
 #endif
 #ifdef TCP_KEEPCNT
   if (on && count && setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT, &count, sizeof(count)))
+  {
+    printf("%d", count);
     return UV__ERR(errno);
+  }
 #endif
   /* Solaris/SmartOS, if you don't support keep-alive,
    * then don't advertise it in your system headers...
