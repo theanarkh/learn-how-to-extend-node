@@ -374,7 +374,7 @@ int uv__tcp_nodelay(int fd, int on) {
 }
 
 
-int uv__tcp_keepalive(int fd, int on, unsigned int delay) {
+int uv__tcp_keepalive(int fd, int on, unsigned int delay, unsigned int interval, unsigned int count) {
   if (setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, &on, sizeof(on)))
     return UV__ERR(errno);
 
@@ -382,7 +382,14 @@ int uv__tcp_keepalive(int fd, int on, unsigned int delay) {
   if (on && setsockopt(fd, IPPROTO_TCP, TCP_KEEPIDLE, &delay, sizeof(delay)))
     return UV__ERR(errno);
 #endif
-
+#ifdef TCP_KEEPINTVL
+  if (on && interval && setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &interval, sizeof(interval)))
+    return UV__ERR(errno);
+#endif
+#ifdef TCP_KEEPCNT
+  if (on && count && setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT, &count, sizeof(count)))
+    return UV__ERR(errno);
+#endif
   /* Solaris/SmartOS, if you don't support keep-alive,
    * then don't advertise it in your system headers...
    */
@@ -414,11 +421,11 @@ int uv_tcp_nodelay(uv_tcp_t* handle, int on) {
 }
 
 
-int uv_tcp_keepalive(uv_tcp_t* handle, int on, unsigned int delay) {
+int uv_tcp_keepalive(uv_tcp_t* handle, int on, unsigned int delay, unsigned int interval, unsigned int count) {
   int err;
 
   if (uv__stream_fd(handle) != -1) {
-    err =uv__tcp_keepalive(uv__stream_fd(handle), on, delay);
+    err =uv__tcp_keepalive(uv__stream_fd(handle), on, delay, interval, count);
     if (err)
       return err;
   }
