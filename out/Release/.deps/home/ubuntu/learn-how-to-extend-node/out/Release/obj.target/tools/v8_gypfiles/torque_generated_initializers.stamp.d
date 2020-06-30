@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/torque_generated_initializers.stamp := touch /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/torque_generated_initializers.stamp
