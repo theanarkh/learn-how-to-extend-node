@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/icu/libicudata.a := rm -f /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/icu/libicudata.a && ar crsT /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/icu/libicudata.a /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/icudata/gen/icusmdt64_dat.o

@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/postmortem-metadata.stamp := touch /home/ubuntu/learn-how-to-extend-node/out/Release/obj.target/tools/v8_gypfiles/postmortem-metadata.stamp

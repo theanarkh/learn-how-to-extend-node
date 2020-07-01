@@ -3,21 +3,21 @@
 TOOLSET := target
 TARGET := v8_snapshot
 ### Rules for action "run_mksnapshot":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot = ACTION generating: "$(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc" "$(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S" $@
-cmd__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/v8_gypfiles; mkdir -p $(obj).$(TOOLSET)/v8_snapshot/geni; "$(builddir)/mksnapshot" --turbo_instruction_scheduling "--target_os=linux" "--target_arch=x64" --startup_src "$(obj).$(TOOLSET)/v8_snapshot/geni/snapshot.cc" --embedded_variant Default --embedded_src "$(obj).$(TOOLSET)/v8_snapshot/geni/embedded.S" --no-native-code-counters
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot = ACTION generating: "$(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc" "$(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S" $@
+cmd__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/tools/v8_gypfiles; mkdir -p $(obj).$(TOOLSET)/v8_snapshot/geni; "$(builddir)/mksnapshot" --turbo_instruction_scheduling "--target_os=linux" "--target_arch=x64" --startup_src "$(obj).$(TOOLSET)/v8_snapshot/geni/snapshot.cc" --embedded_variant Default --embedded_src "$(obj).$(TOOLSET)/v8_snapshot/geni/embedded.S" --no-native-code-counters
 
 $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc: obj := $(abs_obj)
 $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc: builddir := $(abs_builddir)
 $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc: TOOLSET := $(TOOLSET)
-$(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc $(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S: 3dd4c6c9fb09b90c12e6fcef12aeb8beba0f03be.intermediate
+$(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc $(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S: 51c6230f5d1025e4622c51b852b5a47f690b4d4c.intermediate
 	@:
-.INTERMEDIATE: 3dd4c6c9fb09b90c12e6fcef12aeb8beba0f03be.intermediate
-3dd4c6c9fb09b90c12e6fcef12aeb8beba0f03be.intermediate: $(builddir)/mksnapshot FORCE_DO_CMD
+.INTERMEDIATE: 51c6230f5d1025e4622c51b852b5a47f690b4d4c.intermediate
+51c6230f5d1025e4622c51b852b5a47f690b4d4c.intermediate: $(builddir)/mksnapshot FORCE_DO_CMD
 	$(call do_cmd,touch)
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot)
 
 all_deps += $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc $(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S
-action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs := $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc $(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S
+action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs := $(obj).$(TOOLSET)/$(TARGET)/geni/snapshot.cc $(obj).$(TOOLSET)/$(TARGET)/geni/embedded.S
 
 
 DEFS_Debug := \
@@ -152,7 +152,7 @@ all_deps += $(OBJS)
 $(OBJS): | $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(builddir)/mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp
 
 # Make sure our actions/rules run before any of us.
-$(OBJS): | $(action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs)
+$(OBJS): | $(action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs)
 
 # CFLAGS et al overrides must be target-local.
 # See "Target-specific Variable Values" in the GNU Make manual.
@@ -185,10 +185,10 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cc FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 # Build our special outputs first.
-$(obj).target/tools/v8_gypfiles/libv8_snapshot.a: | $(action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs)
+$(obj).target/tools/v8_gypfiles/libv8_snapshot.a: | $(action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs)
 
 # Preserve order dependency of special output on deps.
-$(action__home_cyb_nodejs_node_v12_14_0_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs): | $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(builddir)/mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp
+$(action__home_ubuntu_learn_how_to_extend_node_tools_v8_gypfiles_v8_gyp_v8_snapshot_target_run_mksnapshot_outputs): | $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(builddir)/mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp
 
 LDFLAGS_Debug := \
 	-pthread \

@@ -76,18 +76,18 @@ INCS_Release := \
 	-I$(srcdir)/deps/icu-small/source/tools/toolutil
 
 OBJS := \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/prscmnts.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/errmsg.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/read.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/wrtjava.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/parse.o \
 	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/rbutil.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/reslist.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/genrb.o \
 	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/rle.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/prscmnts.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/parse.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/wrtjava.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/reslist.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/read.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/wrtxml.o \
 	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/ustr.o \
 	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/filterrb.o \
-	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/wrtxml.o
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/errmsg.o \
+	$(obj).host/$(TARGET)/deps/icu-small/source/tools/genrb/genrb.o
 
 # Add to the list of files we specially track dependencies for.
 all_deps += $(OBJS)

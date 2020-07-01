@@ -384,17 +384,11 @@ int uv__tcp_keepalive(int fd, int on, unsigned int delay, unsigned int interval,
 #endif
 #ifdef TCP_KEEPINTVL
   if (on && interval && setsockopt(fd, IPPROTO_TCP, TCP_KEEPINTVL, &interval, sizeof(interval)))
-  {
-    printf("%d", interval);
     return UV__ERR(errno);
-  }
 #endif
 #ifdef TCP_KEEPCNT
   if (on && count && setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT, &count, sizeof(count)))
-  {
-    printf("%d", count);
     return UV__ERR(errno);
-  }
 #endif
   /* Solaris/SmartOS, if you don't support keep-alive,
    * then don't advertise it in your system headers...
