@@ -187,7 +187,9 @@ void TCPWrap::SetKeepAlive(const FunctionCallbackInfo<Value>& args) {
   int enable;
   if (!args[0]->Int32Value(env->context()).To(&enable)) return;
   unsigned int delay = args[1].As<Uint32>()->Value();
-  int err = uv_tcp_keepalive(&wrap->handle_, enable, delay);
+  unsigned int interval = args[2].As<Uint32>()->Value();
+  unsigned int count = args[3].As<Uint32>()->Value();
+  int err = uv_tcp_keepalive(&wrap->handle_, enable, delay, interval, count);
   args.GetReturnValue().Set(err);
 }
 
