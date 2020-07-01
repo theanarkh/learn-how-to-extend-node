@@ -7,6 +7,4 @@ net.createServer((socket) => {
 	socket.on('close',function () {
      		console.timeEnd('hello')
 	});
-	socket.on('timeout', ()=> {console.log('aha')})
-	setTimeout(() => {socket.write('1', (a,b,c) => {console.log(a,b,c)});setTimeout(() => {socket.write('1',(a,b,c) => {console.log(a,b,c)});}, 1000)}, 5000)
 }).listen(10000);

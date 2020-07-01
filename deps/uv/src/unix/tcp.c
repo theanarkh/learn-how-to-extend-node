@@ -395,11 +395,6 @@ int uv__tcp_keepalive(int fd, int on, unsigned int delay, unsigned int interval,
   if (on && count && setsockopt(fd, IPPROTO_TCP, TCP_KEEPCNT, &count, sizeof(count)))
     return UV__ERR(errno);
 #endif
-#ifdef TCP_USER_TIMEOUT
- 	unsigned int timeout = 10000; 
-    if (on &&  setsockopt(fd, IPPROTO_TCP, TCP_USER_TIMEOUT, &timeout, sizeof(timeout)))
-	        return UV__ERR(errno);
-#endif
   /* Solaris/SmartOS, if you don't support keep-alive,
    * then don't advertise it in your system headers...
    */
