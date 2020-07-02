@@ -12,7 +12,7 @@
                  'enable_pgo_generate': 'false',
                  'enable_pgo_use': 'false',
                  'force_dynamic_crt': 0,
-                 'gas_version': '2.31',
+                 'gas_version': '2.30',
                  'host_arch': 'x64',
                  'icu_data_in': '../../deps/icu-small/source/data/in/icudt64l.dat',
                  'icu_endianness': 'l',

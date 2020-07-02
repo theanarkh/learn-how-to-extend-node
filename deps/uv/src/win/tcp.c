@@ -68,7 +68,8 @@ static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsign
 
   if (enable && setsockopt(socket,
                            IPPROTO_TCP,
-                           TCP_KEEPALIVE,
+                          	TCP_KEEPIDLE,
+			   // TCP_KEEPALIVE,
                            (const char*)&delay,
                            sizeof delay) == -1) {
     return WSAGetLastError();
@@ -76,7 +77,9 @@ static int uv__tcp_keepalive(uv_tcp_t* handle, SOCKET socket, int enable, unsign
 
   return 0;
 }
-
+int uv_tcp_timeout(uv_tcp_t* handle, unsigned int timeout) {
+	return 0;
+}
 
 static int uv_tcp_set_socket(uv_loop_t* loop,
                              uv_tcp_t* handle,

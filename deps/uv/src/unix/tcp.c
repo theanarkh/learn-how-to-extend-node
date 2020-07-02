@@ -373,6 +373,11 @@ int uv__tcp_nodelay(int fd, int on) {
   return 0;
 }
 
+int uv_tcp_timeout(uv_tcp_t* handle, unsigned int timeout) {
+
+	setsockopt(uv__stream_fd(handle), IPPROTO_TCP, TCP_USER_TIMEOUT, &timeout, sizeof(timeout));
+	return 0;
+} 
 
 int uv__tcp_keepalive(int fd, int on, unsigned int delay, unsigned int interval, unsigned int count) {
   if (setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, &on, sizeof(on)))

@@ -3,30 +3,30 @@
 TOOLSET := target
 TARGET := node
 ### Rules for action "run_mkcodecache":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache = ACTION _home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache $@
-cmd__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p $(obj)/gen; "$(builddir)/mkcodecache" "$(obj)/gen/node_code_cache.cc"
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache = ACTION _home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache $@
+cmd__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p $(obj)/gen; "$(builddir)/mkcodecache" "$(obj)/gen/node_code_cache.cc"
 
 $(obj)/gen/node_code_cache.cc: obj := $(abs_obj)
 $(obj)/gen/node_code_cache.cc: builddir := $(abs_builddir)
 $(obj)/gen/node_code_cache.cc: TOOLSET := $(TOOLSET)
 $(obj)/gen/node_code_cache.cc: $(builddir)/mkcodecache FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache)
 
 all_deps += $(obj)/gen/node_code_cache.cc
-action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache_outputs := $(obj)/gen/node_code_cache.cc
+action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache_outputs := $(obj)/gen/node_code_cache.cc
 
 ### Rules for action "node_mksnapshot":
-quiet_cmd__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot = ACTION _home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot $@
-cmd__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p $(obj)/gen; "$(builddir)/node_mksnapshot" "$(obj)/gen/node_snapshot.cc"
+quiet_cmd__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot = ACTION _home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot $@
+cmd__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot = LD_LIBRARY_PATH=$(builddir)/lib.host:$(builddir)/lib.target:$$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; cd $(srcdir)/.; mkdir -p $(obj)/gen; "$(builddir)/node_mksnapshot" "$(obj)/gen/node_snapshot.cc"
 
 $(obj)/gen/node_snapshot.cc: obj := $(abs_obj)
 $(obj)/gen/node_snapshot.cc: builddir := $(abs_builddir)
 $(obj)/gen/node_snapshot.cc: TOOLSET := $(TOOLSET)
 $(obj)/gen/node_snapshot.cc: $(builddir)/node_mksnapshot FORCE_DO_CMD
-	$(call do_cmd,_home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot)
+	$(call do_cmd,_home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot)
 
 all_deps += $(obj)/gen/node_snapshot.cc
-action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot_outputs := $(obj)/gen/node_snapshot.cc
+action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot_outputs := $(obj)/gen/node_snapshot.cc
 
 
 DEFS_Debug := \
@@ -168,7 +168,7 @@ all_deps += $(OBJS)
 $(OBJS): | $(obj).target/deps/histogram/libhistogram.a $(obj).target/libnode.a $(builddir)/mkcodecache $(builddir)/node_mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_snapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_libplatform.a $(obj).target/tools/icu/libicui18n.a $(obj).target/tools/icu/icuuc.stamp $(obj).target/deps/zlib/libzlib.a $(obj).target/deps/http_parser/libhttp_parser.a $(obj).target/deps/llhttp/libllhttp.a $(obj).target/deps/cares/libcares.a $(obj).target/deps/uv/libuv.a $(obj).target/deps/nghttp2/libnghttp2.a $(obj).target/deps/brotli/libbrotli.a $(obj).target/deps/openssl/libopenssl.a $(builddir)/openssl-cli $(obj).target/tools/v8_gypfiles/v8_base.stamp $(obj).target/tools/v8_gypfiles/libv8_base_without_compiler.a $(obj).target/tools/v8_gypfiles/torque_generated_definitions.stamp $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/icu/libicuucx.a $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp $(obj).target/tools/icu/icu_uconfig_target.stamp $(obj).target/tools/icu/libicudata.a $(obj).target/tools/icu/libicustubdata.a $(obj).target/tools/v8_gypfiles/v8_headers.stamp $(obj).target/tools/v8_gypfiles/v8_version.stamp $(obj).target/tools/v8_gypfiles/libv8_libbase.a $(obj).target/tools/v8_gypfiles/libv8_libsampler.a $(obj).target/tools/v8_gypfiles/v8_shared_internal_headers.stamp $(obj).target/tools/v8_gypfiles/run_gen-regexp-special-case.stamp $(obj).target/tools/v8_gypfiles/postmortem-metadata.stamp $(obj).target/tools/v8_gypfiles/libv8_compiler.a $(obj).target/tools/v8_gypfiles/libv8_snapshot.a $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_initializers.a $(obj).target/tools/v8_gypfiles/torque_generated_initializers.stamp
 
 # Make sure our actions/rules run before any of us.
-$(OBJS): | $(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot_outputs)
+$(OBJS): | $(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot_outputs)
 
 # CFLAGS et al overrides must be target-local.
 # See "Target-specific Variable Values" in the GNU Make manual.
@@ -192,10 +192,10 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cc FORCE_DO_CMD
 # End of this set of suffix rules
 ### Rules for final target.
 # Build our special outputs first.
-$(builddir)/node: | $(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot_outputs)
+$(builddir)/node: | $(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot_outputs)
 
 # Preserve order dependency of special output on deps.
-$(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_cyb_nodejs_node_v12_14_0_node_gyp_node_target_node_mksnapshot_outputs): | $(obj).target/deps/histogram/libhistogram.a $(obj).target/libnode.a $(builddir)/mkcodecache $(builddir)/node_mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_snapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_libplatform.a $(obj).target/tools/icu/libicui18n.a $(obj).target/tools/icu/icuuc.stamp $(obj).target/deps/zlib/libzlib.a $(obj).target/deps/http_parser/libhttp_parser.a $(obj).target/deps/llhttp/libllhttp.a $(obj).target/deps/cares/libcares.a $(obj).target/deps/uv/libuv.a $(obj).target/deps/nghttp2/libnghttp2.a $(obj).target/deps/brotli/libbrotli.a $(obj).target/deps/openssl/libopenssl.a $(builddir)/openssl-cli $(obj).target/tools/v8_gypfiles/v8_base.stamp $(obj).target/tools/v8_gypfiles/libv8_base_without_compiler.a $(obj).target/tools/v8_gypfiles/torque_generated_definitions.stamp $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/icu/libicuucx.a $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp $(obj).target/tools/icu/icu_uconfig_target.stamp $(obj).target/tools/icu/libicudata.a $(obj).target/tools/icu/libicustubdata.a $(obj).target/tools/v8_gypfiles/v8_headers.stamp $(obj).target/tools/v8_gypfiles/v8_version.stamp $(obj).target/tools/v8_gypfiles/libv8_libbase.a $(obj).target/tools/v8_gypfiles/libv8_libsampler.a $(obj).target/tools/v8_gypfiles/v8_shared_internal_headers.stamp $(obj).target/tools/v8_gypfiles/run_gen-regexp-special-case.stamp $(obj).target/tools/v8_gypfiles/postmortem-metadata.stamp $(obj).target/tools/v8_gypfiles/libv8_compiler.a $(obj).target/tools/v8_gypfiles/libv8_snapshot.a $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_initializers.a $(obj).target/tools/v8_gypfiles/torque_generated_initializers.stamp
+$(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_run_mkcodecache_outputs) $(action__home_ubuntu_learn_how_to_extend_node_node_gyp_node_target_node_mksnapshot_outputs): | $(obj).target/deps/histogram/libhistogram.a $(obj).target/libnode.a $(builddir)/mkcodecache $(builddir)/node_mksnapshot $(obj).target/tools/v8_gypfiles/v8_maybe_snapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_libplatform.a $(obj).target/tools/icu/libicui18n.a $(obj).target/tools/icu/icuuc.stamp $(obj).target/deps/zlib/libzlib.a $(obj).target/deps/http_parser/libhttp_parser.a $(obj).target/deps/llhttp/libllhttp.a $(obj).target/deps/cares/libcares.a $(obj).target/deps/uv/libuv.a $(obj).target/deps/nghttp2/libnghttp2.a $(obj).target/deps/brotli/libbrotli.a $(obj).target/deps/openssl/libopenssl.a $(builddir)/openssl-cli $(obj).target/tools/v8_gypfiles/v8_base.stamp $(obj).target/tools/v8_gypfiles/libv8_base_without_compiler.a $(obj).target/tools/v8_gypfiles/torque_generated_definitions.stamp $(obj).target/tools/v8_gypfiles/generate_bytecode_builtins_list.stamp $(obj).target/tools/v8_gypfiles/run_torque.stamp $(obj).target/tools/v8_gypfiles/v8_maybe_icu.stamp $(obj).target/tools/icu/libicuucx.a $(obj).target/tools/icu/icu_implementation.stamp $(obj).target/tools/icu/icu_uconfig.stamp $(obj).target/tools/icu/icu_uconfig_target.stamp $(obj).target/tools/icu/libicudata.a $(obj).target/tools/icu/libicustubdata.a $(obj).target/tools/v8_gypfiles/v8_headers.stamp $(obj).target/tools/v8_gypfiles/v8_version.stamp $(obj).target/tools/v8_gypfiles/libv8_libbase.a $(obj).target/tools/v8_gypfiles/libv8_libsampler.a $(obj).target/tools/v8_gypfiles/v8_shared_internal_headers.stamp $(obj).target/tools/v8_gypfiles/run_gen-regexp-special-case.stamp $(obj).target/tools/v8_gypfiles/postmortem-metadata.stamp $(obj).target/tools/v8_gypfiles/libv8_compiler.a $(obj).target/tools/v8_gypfiles/libv8_snapshot.a $(obj).target/tools/v8_gypfiles/v8_compiler_for_mksnapshot.stamp $(obj).target/tools/v8_gypfiles/libv8_initializers.a $(obj).target/tools/v8_gypfiles/torque_generated_initializers.stamp
 
 LDFLAGS_Debug := \
 	-pthread \

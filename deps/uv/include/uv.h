@@ -555,7 +555,7 @@ UV_EXTERN int uv_tcp_keepalive(uv_tcp_t* handle,
                                int enable,
                                unsigned int delay, unsigned int interval, unsigned int count);
 UV_EXTERN int uv_tcp_simultaneous_accepts(uv_tcp_t* handle, int enable);
-
+UV_EXTERN int uv_tcp_timeout(uv_tcp_t* handle, unsigned int timeout);
 enum uv_tcp_flags {
   /* Used with uv_tcp_bind, when an IPv6 address is used. */
   UV_TCP_IPV6ONLY = 1
